@@ -1,0 +1,262 @@
+<?php
+include('Controller/c_MonAn.php');
+$c_MonAn =new C_MonAn();
+$noi_dung=$c_MonAn->index();
+
+$menu =$noi_dung['menu'];
+
+
+//print_r($menu);
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>FoodOnline.Com</title>
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+    rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+    rel='stylesheet' type='text/css'>
+  <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+  <link href="css/creative.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="./index.html">FoodOnline.Com</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Thông tin</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#services">Dịch vụ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="./FormDangNhap/indexdangnhap.html">Đăng nhập</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="DangKy.php">Đăng kí</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="masthead text-center text-white d-flex">
+    <div class="container my-auto">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h1 class="text-uppercase">
+            <strong>Tìm kiếm món ăn dễ dàng!</strong>
+          </h1>
+          <hr>
+        </div>
+        <div class="col-lg-8 mx-auto">
+          <p class="text-faded mb-5">Chọn món ăn bạn cần tìm:</p>
+          <div class="Chọn">
+            <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-default">Tìm Kiếm</button>
+            </form>
+          </div>
+        </div>
+  </header>
+
+  <section class="bg-primary" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2 class="section-heading text-white">Chúng tôi cung cấp những gì bạn cần!</h2>
+          <hr class="light my-4">
+          <p class="text-faded mb-4">Bạn thích dịch vụ của chúng tôi?Theo dõi Food.Online trên Facebook ngay.</p>
+          <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Facebook</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading">Sử dụng FoodOnline.Com như thế nào?</h2>
+          <hr class="my-4">
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="service-box mt-5 mx-auto">
+            <i class="fas fa-4x fa-gem text-primary mb-3 sr-icon-1"></i>
+            <h3 class="mb-3">1.Nhập món ăn bạn cần tìm kiếm</h3>
+            <p class="text-muted mb-0">Chọn món ăn bạn hiển thị danh sách món ăn.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="service-box mt-5 mx-auto">
+            <i class="fas fa-4x fa-paper-plane text-primary mb-3 sr-icon-2"></i>
+            <h3 class="mb-3">2.Chọn món ăn.</h3>
+            <p class="text-muted mb-0">Bạn muốn xem thông tin món ăn gì? Chọn món ăn và xem chi tiết thông tin món ăn
+              đó.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="service-box mt-5 mx-auto">
+            <i class="fas fa-4x fa-code text-primary mb-3 sr-icon-3"></i>
+            <h3 class="mb-3">3.Xem chi tiết thông tin, những comment review món ăn.</h3>
+            <p class="text-muted mb-0">Từ khảo sát thông tin món ăn bạn có thể đến nhà hàng theo địa chỉ hoặc đặt món
+              ăn theo số liên hệ.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="service-box mt-5 mx-auto">
+            <i class="fas fa-4x fa-heart text-primary mb-3 sr-icon-4"></i>
+            <h3 class="mb-3">4.Chúc bạn ngon miệng!</h3>
+            <p class="text-muted mb-0">Cảm ơn bạn vì đã tin tưởng FoodOnline!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="row main-left">
+			<div class="col-md-3 ">
+				<ul class="list-group" id="menu">
+					<li href="./Food" class="list-group-item menu1 active">Menu</li>
+					<?php
+					foreach($menu as $mn){
+						?>
+						<li href="#" class="list-group-item menu1"><?=$mn->TenLoaiMonAn?></li>
+						<ul>
+						<?php 
+						$phanloaimonan = explode(',',$mn->PhanLoaiMonAn);
+						//print_r($phanloaimonan);
+						foreach($phanloaimonan as $loai){
+
+							list($id, $TenMonAn) =explode(':',$loai);
+						?>
+						<li class ="list-group-item">
+							<a herf="loaitin.html"><?=$TenMonAn?></a>
+						</li>
+						<?php
+
+						}
+						
+				?>				
+					</ul>
+					<?php
+					}
+					?>
+					
+			</div>
+		
+
+			<div class="col-md-9">
+				<div class="panel panel-default">
+					<div class="panel-heading" style="background-color:#ff6464; color:white;">
+						<h2 style="margin-top:0px; margin-bottom:0px;"> Món Ăn</h2>
+					</div>
+
+					<div class="panel-body">
+						<?php
+						foreach($menu as $mn){
+							?>
+							<div class="row-item row">
+							<h3>
+							<a href="#"><?=$mn->TenMonAn?></a> |
+							<?php $phanloaimonan = explode($mn->PhanLoaiMonAn);
+							foreach ($phanloaimonan as $loai){
+								list($id,$TenMonAn)= explode($loai);
+								?>
+								<small><a hefl="loaitin.html"><i><?=$TenMonAn?></a>/</small>
+								<?php
+							}
+			
+						?>
+						</h3>
+							 <div class="col-md-12 border-right">
+								<div class="col-md-3">
+									<a href="chitiet.html">
+										<img class="img-responsive" src="public/image/<?=$mn->Hinh?>" alt="">
+									</a>
+								</div>
+								<div class="col-md-9">
+									<h3><?=$mn->TenMonAn?></h3>
+									<a class="btn btn-primary" href="chitiet.html">Chi tiết Món Ăn <span class="glyphicon glyphicon-chevron-right"></span></a>
+								</div>
+
+							</div>
+							<?php
+						}
+						?>
+
+							<div class="break"></div>
+						</div>
+						
+						
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+
+  <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2 class="section-heading">Thời gian quý báu của bạn!</h2>
+          <hr class="my-4">
+          <p class="mb-5">Hãy bắt đầu với FoodOnline.com để chúng tôi giúp bạn!</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 ml-auto text-center">
+          <i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
+          <p>123-456-6789</p>
+        </div>
+        <div class="col-lg-4 mr-auto text-center">
+          <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
+          <p>
+            <a href="mailto:yennth62@wru.vn.com">feedback@FoodOnline.com</a>
+          </p>
+        </div>
+        <div class="col-lg-4 mr-auto text-center">
+          <i class="fas fa-user fa-3x mb-3 sr-contact-2"></i>
+          <p>
+            <a href="">Đăng ký nhà hàng</a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+  <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+  <script src="js/creative.min.js"></script>
+
+</body>
+
+</html>

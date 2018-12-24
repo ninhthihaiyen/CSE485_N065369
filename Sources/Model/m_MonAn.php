@@ -6,10 +6,15 @@ class m_MonAn extends database{
         $this->setQuery($sql);
         return $this->loadAllRows();
     }
-    function getMonAnByIdLoai($id_Loaimonan){
-        $sql ="SELECT * FROM monan WHERE idPhanloaimonan = $id_loaimonan";
+    function getMonAnByIdPhanLoaiMonAn($id_Phanoaimonan){
+        $sql ="SELECT * FROM monan WHERE idPhanloaimonan = $id_phanloaimonan";
         $this->setQuery($sql);
         return $this->loadAllRows(array($id_loaimonan));
+    }
+    function getChitietMonAn($id){
+        $sql ="SELECT * FROM monan WHERE id = $id";
+        $this->setQuery($sql);
+        return $this ->loadRow(array($id));
     }
 
 }

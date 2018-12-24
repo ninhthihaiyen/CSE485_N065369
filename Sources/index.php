@@ -32,11 +32,15 @@
       <div class="container">
          <nav id="fixNav">
             <ul>
-               <li><a href="#">Food Online</a></li>
+               <?
+               <li><a href="./index.php">Food Online</a></li>
                <li><a href="#">Giới Thiệu</a></li>
                <li><a href="#">Liên hệ</a></li>
-               <li><a href="./public/dangki.html">Đăng Kí </a></li>
-               <li><a href ="./public/dangnhap.html">Đăng Nhập</a></li>
+               <li><a href="./DangKi.php">Đăng Kí </a></li>
+               <li><a href ="./DangNhap.php">Đăng Nhập</a></li>
+               <li>
+                    <a>
+                        <span class="glyphicon glyphicon-user"></span>Hải Yến</a></li>
             </ul>
          </nav>
       </div>
@@ -111,8 +115,8 @@
       </section>
       <div class="row main-left">
       <div class="col-md-3 ">
-      <ul class="list-group" id="menu">
-      <li href="./Food" class="list-group-item menu1 active">Menu</li>
+      <ul class="list-group" id="menu" >
+      <li href="./Food" class="list-group-item menu1 active" style="background-color:#f05f40; color:white;">Menu</li>
       <?php
          foreach($menu as $mn){
          	?>

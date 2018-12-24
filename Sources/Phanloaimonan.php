@@ -1,7 +1,7 @@
 <?php 
 include('Controller/c_MonAn.php');
-$C_MonAn = new c_MonAn();
-$monan=$C_MonAn->index();
+$c_MonAn = new C_MonAn();
+$monan=$c_MonAn->phanloaimonan();
 print_r($monan);
 ?>
 <!DOCTYPE html>

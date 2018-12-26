@@ -1,4 +1,5 @@
 <?php
+session_start();
    include('Controller/c_MonAn.php');
    $c_MonAn =new C_MonAn();
    $noi_dung=$c_MonAn->index();
@@ -32,16 +33,21 @@
       <div class="container">
          <nav id="fixNav">
             <ul>
-               <?
                <li><a href="./index.php">Food Online</a></li>
                <li><a href="#">Giới Thiệu</a></li>
                <li><a href="#">Liên hệ</a></li>
-               <li><a href="./DangKi.php">Đăng Kí </a></li>
-               <li><a href ="./DangNhap.php">Đăng Nhập</a></li>
-               <li>
+                <?php
+                if(isset($_SESSION['user_name'])){
+                    ?>
+                <li>
                     <a>
-                        <span class="glyphicon glyphicon-user"></span>Hải Yến</a></li>
-            </ul>
+                        <span class="glyphicon glyphicon-user"></span><?=$_SESSION['user_name']?></a></li>
+                        <?php
+                }
+                    ?>
+                    <li><a href="./dangki.php">Đăng Kí </a></li>
+                    <li><a href="./dangnhap.php">Đăng Nhập</a></li>
+         
          </nav>
       </div>
       <header class="masthead text-center text-white d-flex">
@@ -131,7 +137,7 @@
          	list($id, $TenMonAn) =explode(':',$loai);
          ?>
       <li class ="list-group-item">
-      <a herf="loaitin.html"><?=$TenMonAn?></a>
+      <a href="Phanloaimonan.php?id_loai=<?=$id?>"><?=$TenMonAn?></a>
       </li>
       <?php
          }
@@ -159,7 +165,7 @@
          foreach ($phanloaimonan as $loai){
          	list($id,$TenMonAn)= explode(':',$loai);
          	?>
-      <small><a hefl="loaitin.html"><i><?=$TenMonAn?></a>/</small>
+      <small><a href="Phanloaimonan.php?id_loai=<?=$id?>"><i><?=$TenMonAn?></a>/</small>
       <?php
          }
          
@@ -167,13 +173,13 @@
       </h3>
       <div class="col-md-12 border-right">
       <div class="col-md-3">
-      <a href="chitiet.html">
+      <a href="chitiet.php?id_monan=<?=$mn->idMonAn?>&loai_monan=<?TenKhongDau?>">
       <img class="img-responsive" src=".//public/image/<?=$mn->Hinh?>" alt="">
       </a>
       </div>
       <div class="col-md-9">
       <h3><?=$mn->TenMonAn?></h3>
-      <a class="btn btn-primary" href="chitiet.html" style="background-color:#f05f40; color:white;">Chi tiết Món Ăn <span class="glyphicon glyphicon-chevron-right"></span></a>
+      <a class="btn btn-primary" href="chitiet.php?id_monan=<?=$mn->idMonAn?>&loai_monan=<?TenKhongDau?>" style="background-color:#f05f40; color:white;">Chi tiết Món Ăn <span class="glyphicon glyphicon-chevron-right"></span></a>
       </div>
       </div>
       </div>

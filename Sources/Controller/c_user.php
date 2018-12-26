@@ -21,7 +21,7 @@ function dangkiTK($name,$email,$password,$diachi){
         $user=$m_User->dangnhap($email,$password);
         if($user==true){
             $_SESSION['user_name']=$user->TenKhachHang;
-            header('location:DangKi.php');
+            header('location:index.php');
             if(isset($_SESSION['user_error'])){
                 unset($_SESSION['user_error']);
             }

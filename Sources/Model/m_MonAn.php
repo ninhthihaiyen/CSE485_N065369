@@ -6,17 +6,32 @@ class m_MonAn extends database{
         $this->setQuery($sql);
         return $this->loadAllRows();
     }
-    function getMonAnByIdPhanLoaiMonAn($id_Phanoaimonan){
-        $sql ="SELECT * FROM monan WHERE idPhanloaimonan = $id_phanloaimonan";
+    function getMonAnByIdPhanLoaiMonAn($id_Phanloaimonan){
+        $sql ="SELECT * FROM monan WHERE idPhanloaimonan = $id_Phanloaimonan";
         $this->setQuery($sql);
-        return $this->loadAllRows(array($id_loaimonan));
+        return $this->loadAllRows(array($id_Phanloaimonan));
+    }
+    function getTitlebyId($id_Phanloaimonan){
+        $sql="SELECT TenMonAn FROM phanloaimonan WHERE id =$id_Phanloaimonan";
+        $this->setQuery($sql);
+        return $this->loadRow(array($id_Phanloaimonan));
     }
     function getChitietMonAn($id){
-        $sql ="SELECT * FROM monan WHERE id = $id";
+        $sql="SELECT *FROM monan WHERE id=$id";
         $this->setQuery($sql);
-        return $this ->loadRow(array($id));
+        return $this->loadRow(array($id));
     }
-
+    function getComment($id_MonAn){
+        $sql ="SELECT * FROM comment WHERE idMonAn=$id_MonAn";
+        $this->setQuery($sql);
+        return $this->loadAllRows(array($id_MonAn));
+    }
+    function getRelatedNews($alias){
+        $sql="SELECT ma.*,pl.TenKhongDau as TenKhongDau,pl.id as idphanloaimonan FROM monan ma INNER JOIN phanloaimonan pl 
+        ON ma.idphanloaimonan= pl.id WHERE pl.TenKhongDau='$alias' limit 0,4" ;
+        $this->setQuery($sql);
+        return $this->loadAllRows(array($alias));
+    }
 }
 
 ?>
